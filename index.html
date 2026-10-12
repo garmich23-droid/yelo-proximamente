@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YELO | Próximamente</title>
+  <meta name="description" content="Yelo · Hielo de calidad. Muy pronto, nuestro nuevo sitio.">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" href="favicon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+      color: #fff;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100svh; /* altura real en celulares (sin la barra del navegador) */
+      padding: 24px;
+      font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: clamp(28px, 6vw, 48px);
+    }
+
+    .logo {
+      display: block;
+      width: clamp(200px, 60vw, 420px);
+      height: auto;
+    }
+
+    .proximamente {
+      margin: 0;
+      font-weight: 300;
+      font-size: clamp(1.1rem, 3.6vw, 1.6rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      /* compensa el espacio extra que deja letter-spacing al final */
+      margin-right: -0.35em;
+    }
+
+    /* Aparición sutil */
+    .fade {
+      opacity: 0;
+      animation: aparecer 1.4s ease-out forwards;
+    }
+    .proximamente.fade { animation-delay: 0.6s; }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Si el usuario pidió menos animaciones en su dispositivo, se muestra todo directo */
+    @media (prefers-reduced-motion: reduce) {
+      .fade { opacity: 1; animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="logo fade" src="logo.png" width="835" height="415" alt="Yelo · Hielo de calidad">
+    <p class="proximamente fade">Próximamente</p>
+  </main>
+</body>
+</html>
